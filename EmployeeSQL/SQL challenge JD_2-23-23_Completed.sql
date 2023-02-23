@@ -7,23 +7,21 @@ INNER JOIN salaries AS s ON e.emp_no=s.emp_no
 --Data Analysis Q#2 List the first name, last name, and hire date for the employees who were hired in 1986.
 SELECT e.first_name, e.last_name, e.hire_date
 FROM employees AS e
-WHERE e.hire_date > '1985-12-31'
-;
+WHERE e.hire_date > '1985-12-31';
 
 --Data Analysis Q#3 List the manager of each department along with their department number, department name, employee number, 
 --last name, and first name.
 SELECT man.emp_no, dept.dept_no, e.last_name, e.first_name, dept.dept_name
 FROM employees AS e
 INNER JOIN dept_manager AS man ON e.emp_no=man.emp_no
-INNER JOIN departments AS dept ON dept.dept_no= man.dept_no
-;
+INNER JOIN departments AS dept ON dept.dept_no= man.dept_no;
 
 --Data Analysis Q#4 List the department number for each employee along with that employee’s employee number, 
 --last name, first name, and department name.
 SELECT depte.dept_no, depte.emp_no, e.last_name, e.First_name, dept.dept_name
 FROM employees AS e
 INNER JOIN dept_emp AS depte ON e.emp_no=depte.emp_no
-INNER JOIN departments AS dept ON dept.dept_no= depte.dept_no
+INNER JOIN departments AS dept ON dept.dept_no= depte.dept_no;
 
 --Data Analysis Q#5 List first name, last name, and sex of each employee whose first name is Hercules 
 --and whose last name begins with the letter B.
@@ -36,7 +34,7 @@ SELECT depte.emp_no, e.last_name, e.first_name
 FROM employees AS e
 INNER JOIN dept_emp AS depte ON e.emp_no=depte.emp_no
 INNER JOIN departments AS dept ON dept.dept_no= depte.dept_no
-WHERE dept.dept_name IN ('Sales')
+WHERE dept.dept_name IN ('Sales');
 
 --Data Analysis Q#7 List each employee in the Sales and Development departments, including their employee number, last name, 
 --first name, and department name.
