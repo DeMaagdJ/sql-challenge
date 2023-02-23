@@ -36,8 +36,7 @@ SELECT depte.emp_no, e.last_name, e.first_name
 FROM employees AS e
 INNER JOIN dept_emp AS depte ON e.emp_no=depte.emp_no
 INNER JOIN departments AS dept ON dept.dept_no= depte.dept_no
-WHERE dept.dept_name IN ('Sales') --AND depte.emp_no IN ('111035', '111133 ) --Statement to verify managers where included in query
-;
+WHERE dept.dept_name IN ('Sales')
 
 --Data Analysis Q#7 List each employee in the Sales and Development departments, including their employee number, last name, 
 --first name, and department name.
